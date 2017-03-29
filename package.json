@@ -1,11 +1,11 @@
 {
-  "name": "empty_project",
+  "name": "voting-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test-watch": "jest --watchAll",
+    "test": "jest --setupTestFrameworkScriptFile ./__tests__/helpers/test_helper.js",
+    "test-watch": "npm run test -- --watchAll",
     "babel-node": "babel-node",
     "eslint": "eslint",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline"
@@ -13,19 +13,20 @@
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/__fixtures__/"
+      "/__fixtures__/",
+      "./__tests__/helpers/"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dzencot/empty_project.git"
+    "url": "git+https://github.com/dzencot/voting_server.git"
   },
   "author": "Ivan Gagrinov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dzencot/empty_project/issues"
+    "url": "https://github.com/dzencot/voting_server.issues"
   },
-  "homepage": "https://github.com/dzencot/empty_project#readme",
+  "homepage": "https://github.com/dzencot/voting_server.readme",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
@@ -35,6 +36,8 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.2.2",
     "babel-preset-stage-0": "^6.22.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-flowtype": "^2.30.4",
@@ -42,5 +45,8 @@
     "flow": "^0.2.3",
     "flow-typed": "^2.0.0",
     "jest": "^19.0.2"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1"
   }
 }
